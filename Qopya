@@ -1,0 +1,213 @@
+Halmat
+import 'package:flutter/material.dart';
+void main() {
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: homepage(),
+  ),);}
+
+    class homepage extends StatelessWidget {
+
+
+      @override
+      Widget build(BuildContext context) {
+        return Scaffold(
+
+        appBar: AppBar(
+        title:Text("rawaz",
+        style: TextStyle(
+        color: Colors.white,
+        fontSize:40,
+        ),
+        ),
+        backgroundColor: Colors.green,
+        centerTitle: true,
+        ),
+        drawer: Drawer(
+          child: ListView(
+            children: [
+              UserAccountsDrawerHeader(accountName: Text("rawaz jamal"), accountEmail:Text ("rawazjamal1998@gmail.com")),
+               ListTile(
+                 leading: Icon(Icons.icecream),
+                 title: Text("kkkk"),
+                 onTap: (){
+                   Navigator.push(context,
+                   MaterialPageRoute(builder:( context)=>page1() ),
+                   );
+                 }
+               ),
+              ListTile(
+                  leading: Icon(Icons.icecream),
+                  title: Text("mmmmmm"),
+                  onTap: (){
+                    Navigator.push(context,
+                      MaterialPageRoute(builder:( context)=>page2() ),
+
+                    );
+                  }
+              )
+            ],
+        )
+        ),
+        body: Center(
+        child: Column(
+        children: [
+        SizedBox(height:55), //lo bayni kask u rawaz akay zyadka
+        Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+        Text("rawaz",style: TextStyle(
+        color: Colors.blue),
+        ),
+        Icon(Icons.percent)
+        ],
+  ),
+  SizedBox(height:55),//lo bayni rawaz u rami akay zyadka
+  Row(
+  mainAxisAlignment: MainAxisAlignment.center,
+  children: [
+  Text("rami",style: TextStyle(
+  color: Colors.blue),
+  ),
+  Icon(Icons.lock_clock)
+  ],
+  ),
+  SizedBox(height:55),
+  ElevatedButton(onPressed:()
+  {},
+
+
+
+
+
+
+
+
+
+
+  child: Text("buton",style: TextStyle(
+  color: Colors.green),
+
+  ),
+  ),
+  SizedBox(height:20),
+  Expanded(child:
+  GridView(gridDelegate:SliverGridDelegateWithFixedCrossAxisCount(
+  crossAxisCount: 5
+
+  ),
+
+  children:[
+
+  Container(
+  width: 12,
+  height: 12,
+  decoration: BoxDecoration(color: Colors.blue,
+  borderRadius: BorderRadius.only(
+    topLeft: Radius.circular(59),
+        bottomRight: Radius.circular(50),
+  ),
+
+  ),
+  child: Center(
+  child: Text("hhjhjhjhjh"),
+  ),
+  margin: EdgeInsets.all(5),//space dana etare contener
+  ),
+
+
+  Container(
+  width: 12,
+  height: 12,
+  decoration: BoxDecoration(color: Colors.greenAccent,
+  borderRadius: BorderRadius.circular(50)
+
+  ),
+  child: Center(
+  child: Text("hhhh"),
+  ),
+  margin: EdgeInsets.all(5),//space dana etare contener
+  ),
+
+  Container(
+  width: 12,
+  height: 12,
+  decoration: BoxDecoration(color: Colors.blue,
+  borderRadius: BorderRadius.circular(20)
+
+  ),
+  child: Center(
+  child: Text("hhhhh"),
+  ),
+  margin: EdgeInsets.all(5),//space dana etare contener
+  ),
+  ]
+  )
+  ),
+  ],   //children
+  ) ,
+  ),
+        );
+        
+      }
+}
+class page1 extends StatelessWidget {
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("rawaz",
+        style: TextStyle(
+         color: Colors.white,
+           fontSize:40,
+        ),
+      ),
+        backgroundColor: Colors.green,
+    ),
+      body: Center(
+        child: Column(
+          children: [
+            ElevatedButton(onPressed:(){
+      Navigator.pop(context);
+    },
+    child: Text("back"),
+
+      ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+class page2 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("rami",
+          style: TextStyle(
+            color: Colors.white,
+            fontSize:40,
+          ),
+        ),
+        backgroundColor: Colors.green,
+      ),
+body: Center(
+     child:Column(
+children: [
+  ElevatedButton(onPressed:(){
+Navigator.pop(context);
+},
+        child: Text("back"),
+    ),
+
+      ],
+           ),
+
+     ),
+
+    );
+  }
+}
